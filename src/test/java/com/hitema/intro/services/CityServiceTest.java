@@ -8,13 +8,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
 @SpringBootTest
-class CountryServiceTest {
+class CityServiceTest {
 
-    private static final Logger log = LoggerFactory.getLogger(CountryServiceTest.class);
+    private static final Logger log = LoggerFactory.getLogger(CityServiceTest.class);
+
     @Autowired
-    CountryService service;
+    CityService service;
 
     @Test
     void create() {
@@ -24,9 +24,10 @@ class CountryServiceTest {
     void read() {
         log.info("DEBUT TESTS Read One");
         Long id = 6l;
-        var country = service.read(id);
-        log.trace("{}", country);
+        var city = service.read(id);
+        log.trace("{}", city);
         log.info("FIN TESTS Read One");
+
     }
 
     @Test
