@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public class Country {
     @Id
     @Column(name = "country_id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
 
@@ -42,6 +42,6 @@ public class Country {
         this.lastUpdate = lastUpdate;
     }
     
-    
+
     
 }

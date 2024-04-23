@@ -3,9 +3,7 @@ package com.hitema.intro.controllers;
 
 import com.hitema.intro.models.City;
 import com.hitema.intro.services.CityService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,15 @@ public class CityController {
     @GetMapping("/all")
     public List<City> getAllCities() {
         return service.readAll();
+    }
+    
+    @PostMapping("/create")
+    public City createCity(@RequestBody City city) {
+        return service.create(city);
+    }
+
+    @GetMapping("/{id}")
+    public City getCityById(@PathVariable Long id) {
+        return service.read(id);
     }
 }

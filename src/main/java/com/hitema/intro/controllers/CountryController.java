@@ -2,9 +2,8 @@ package com.hitema.intro.controllers;
 import com.hitema.intro.models.Country;
 import com.hitema.intro.services.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -24,8 +23,15 @@ public class CountryController {
         return service.readAll();
     }
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello from the server!";
+    @PostMapping("/create")
+    public Country createCountry(@RequestBody Country country) {
+        return service.create(country);
     }
+
+
+    @PutMapping("/update")
+    public Country updateCountry(@RequestBody Country country) {
+        return service.update(country);
+    }
+    
 }

@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class City {
     @Id
     @Column(name = "city_id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
 
